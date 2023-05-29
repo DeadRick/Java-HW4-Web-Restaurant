@@ -37,6 +37,11 @@ public class AuthController {
         String email = userDTO.getEmail();
         String username = userDTO.getUsername();
 
+        // Проверка корректности Email
+        if (!email.contains("@")) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Incorrect email address!");
+        }
+
         // Проверка существования пользователя с заданной электронной почтой
         if (userRepository.findByEmail(email) != null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("User with the same email already exists");

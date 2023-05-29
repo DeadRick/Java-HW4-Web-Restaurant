@@ -39,5 +39,9 @@ public class Session {
     public void setExpiresAt(LocalDateTime expiresAt) {
         this.expiresAt = expiresAt;
     }
+
+    public Long getUserId() {
+        return user.getUserId();
+    }
 }
 

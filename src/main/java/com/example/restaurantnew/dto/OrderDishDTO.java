@@ -1,15 +1,15 @@
 package com.example.restaurantnew.dto;
 
-public class OrderDishesDTO {
+public class OrderDishDTO {
     private Integer orderId;
     private Integer dishId;
     private Integer quantity;
     private Double price;
 
-    public OrderDishesDTO() {
+    public OrderDishDTO() {
     }
 
-    public OrderDishesDTO(Integer orderId, Integer dishId, Integer quantity, Double price) {
+    public OrderDishDTO(Integer orderId, Integer dishId, Integer quantity, Double price) {
         this.orderId = orderId;
         this.dishId = dishId;
         this.quantity = quantity;

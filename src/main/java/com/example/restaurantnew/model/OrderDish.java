@@ -9,15 +9,18 @@ public class OrderDish {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "order_id")
-    private Integer orderId;
+    private Long orderId;
 
     @Column(name = "dish_id")
-    private Integer dishId;
+    private Long dishId;
 
-    private Integer quantity;
+    @Column(name = "quantity")
+    private Long quantity;
+
+    @Column(name = "price")
     private Double price;
 
     // Constructors, getters, and setters
@@ -25,7 +28,7 @@ public class OrderDish {
     public OrderDish() {
     }
 
-    public OrderDish(Integer id, Integer orderId, Integer dishId, Integer quantity, Double price) {
+    public OrderDish(Long id, Long orderId, Long dishId, Long quantity, Double price) {
         this.id = id;
         this.orderId = orderId;
         this.dishId = dishId;
@@ -33,35 +36,31 @@ public class OrderDish {
         this.price = price;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getOrderId() {
+    public Long getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(Integer orderId) {
+    public void setOrderId(Long orderId) {
         this.orderId = orderId;
     }
 
-    public Integer getDishId() {
+    public Long getDishId() {
         return dishId;
     }
 
-    public void setDishId(Integer dishId) {
+    public void setDishId(Long dishId) {
         this.dishId = dishId;
     }
 
-    public Integer getQuantity() {
+    public Long getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(Long quantity) {
         this.quantity = quantity;
     }
 

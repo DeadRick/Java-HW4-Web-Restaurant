@@ -1,10 +1,14 @@
 package com.example.restaurantnew.dto;
 
+
+import java.util.Map;
 import java.time.LocalDateTime;
 
 public class OrderDTO {
     private Long id;
+    private String token;
     private Long userId;
+    private Map<Long, Long> dishes;
     private String status;
     private String specialRequests;
     private LocalDateTime createdAt;
@@ -57,5 +61,21 @@ public class OrderDTO {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Map<Long, Long> getDishes() {
+        return dishes;
+    }
+
+    public void setDishes(Map<Long, Long> dishes) {
+        this.dishes = dishes;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getToken() {
+        return token;
     }
 }

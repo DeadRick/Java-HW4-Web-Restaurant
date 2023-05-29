@@ -1,6 +1,8 @@
 package com.example.restaurantnew.model;
 
 import jakarta.persistence.*;
+import jdk.jfr.Timestamp;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -15,7 +17,7 @@ public class User {
     public User() {
 
     }
-    public User(Integer id, String username, String email, String password, String role, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public User(Long id, String username, String email, String password, String role, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.username = username;
         this.email = email;
@@ -27,7 +29,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(unique = true)
     private String username;
@@ -35,12 +37,17 @@ public class User {
     @Column(unique = true)
     private String email;
 
+    @Column(name = "password")
     private String password;
+
+    @Column(name = "role")
     private String role;
 
+    @CreationTimestamp
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
+    @CreationTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
@@ -92,5 +99,9 @@ public class User {
 
     public String getRole() {
         return role;
+    }
+
+    public Long getUserId() {
+        return id;
     }
 }
